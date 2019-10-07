@@ -3,6 +3,8 @@ import 'dart:async';
 import 'package:first_flutter_web_app/mini_game.dart';
 import 'package:first_flutter_web_app/HomePage.dart';
 import 'package:first_flutter_web_app/hive.dart';
+import 'package:first_flutter_web_app/r_example.dart';
+import 'package:first_flutter_web_app/random_walk.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/material.dart';
 import 'package:hive/hive.dart';
@@ -20,20 +22,23 @@ class MyApp extends StatelessWidget {
     return Provider<StreamSink>.value(
       value: _title.sink,
       child: StreamBuilder<String>(
-          stream: _title.stream,
-          builder: (context, snapshot) => MaterialApp(
-                key: ValueKey<String>('mainApp'),
-                onGenerateTitle: (context) => snapshot.data ?? 'Web Demo',
-                theme: ThemeData.light(),
-                darkTheme: ThemeData.dark(),
-                themeMode: ThemeMode.dark,
-                initialRoute: '/',
-                routes: {
-                  '/': (context) => MyHomePage(),
-                  '/hive': (context) => HivePage(),
-                  '/minigame': (context) => MiniGamePage(),
-                },
-              )),
+        stream: _title.stream,
+        builder: (context, snapshot) => MaterialApp(
+          key: ValueKey<String>('mainApp'),
+          onGenerateTitle: (context) => snapshot.data ?? 'Web Demo',
+          theme: ThemeData.light(),
+          darkTheme: ThemeData.dark(),
+          themeMode: ThemeMode.dark,
+          initialRoute: '/',
+          routes: {
+            '/': (context) => MyHomePage(),
+            '/hive': (context) => HivePage(),
+            '/minigame': (context) => MiniGamePage(),
+            '/randomwalk': (context) => RandomWalkPage(),
+            '/rexample': (context) => RExample(),
+          },
+        ),
+      ),
     );
   }
 }

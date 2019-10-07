@@ -29,6 +29,18 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text('mini game'),
               shape: StadiumBorder(),
             ),
+            Container(height: 20),
+            RaisedButton(
+              onPressed: () => Navigator.of(context).pushNamed('/randomwalk'),
+              child: Text('random walk'),
+              shape: StadiumBorder(),
+            ),
+            Container(height: 20),
+            RaisedButton(
+              onPressed: () => Navigator.of(context).pushNamed('/rexample'),
+              child: Text('R rotation'),
+              shape: StadiumBorder(),
+            ),
           ],
         ),
       ),
