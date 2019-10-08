@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:html' as html;
 
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +32,10 @@ class _RExampleState extends State<RExample> {
       body: Center(
         child: IconButton(
           icon: Icon(Icons.file_download),
-          onPressed: () => null,
+          onPressed: () => html.window.open(
+            'https://raw.githubusercontent.com/a-h-mzd/a-h-mzd.github.io/master/assets/assets/rotateNintyDegrees.R',
+            'Rotate.R',
+          ),
           tooltip: 'download',
         ),
       ),

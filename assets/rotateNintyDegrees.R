@@ -22,3 +22,15 @@ rotateNintyDegrees <- function(data, turns = 1L, clockWise = FALSE){
 
   return(rotate(turns%%4));
 }
+
+getData <- function(){
+  x <- c();
+  for (i in 1:100) for (j in 0:99) x = rbind(x,i+j);
+  m = matrix(x,ncol = 100,nrow = 100,byrow = TRUE);
+  return(m);
+}
+
+paint <- function(data){
+  if(!is.matrix(data)) stop('input data must be matrix');
+  image(data, col = heat.colors(n = 100));
+}
